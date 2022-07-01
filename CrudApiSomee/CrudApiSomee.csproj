@@ -181,6 +181,10 @@
     <Compile Include="Models\Municipality.cs" />
     <Compile Include="Models\Provider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Estados.cs" />
+    <Compile Include="Services\MunicipioService.cs" />
+    <Compile Include="ViewModels\EstadoVM.cs" />
+    <Compile Include="ViewModels\MunicipiosVm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -236,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Entities1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
