@@ -9,17 +9,29 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CrudApiSomee.Models;
+using CrudApiSomee.Services;
+using CrudApiSomee.ViewModels;
 
 namespace CrudApiSomee.Controllers
 {
     public class EntitiesController : ApiController
     {
         private DBModel db = new DBModel();
+        Estados esta = new Estados();
+        //public IQueryable<Entity> GetEntities()
+        //{
+
+        //    return db.Entities;
+        //}
+
+
 
         // GET: api/Entities
-        public IQueryable<Entity> GetEntities()
+
+        [HttpGet]
+        public List<EstadoVM> Index()
         {
-            return db.Entities;
+            return esta.EstadoList();
         }
 
         // GET: api/Entities/5

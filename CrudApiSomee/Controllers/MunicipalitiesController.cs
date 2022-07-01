@@ -9,17 +9,25 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CrudApiSomee.Models;
+using CrudApiSomee.Services;
+using CrudApiSomee.ViewModels;
 
 namespace CrudApiSomee.Controllers
 {
     public class MunicipalitiesController : ApiController
     {
         private DBModel db = new DBModel();
+        //public IQueryable<Municipality> GetMunicipalities()
+        //{
+        //    return db.Municipalities;
+        //}
 
         // GET: api/Municipalities
-        public IQueryable<Municipality> GetMunicipalities()
+        MunicipioService municipioService = new MunicipioService();
+        [HttpGet]
+        public List<MunicipiosVm> Index()
         {
-            return db.Municipalities;
+            return municipioService.EstadoList();
         }
 
         // GET: api/Municipalities/5
