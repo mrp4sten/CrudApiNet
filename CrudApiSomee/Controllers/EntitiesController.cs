@@ -5,33 +5,22 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CrudApiSomee.Models;
 using CrudApiSomee.Services;
-using CrudApiSomee.ViewModels;
 
 namespace CrudApiSomee.Controllers
 {
     public class EntitiesController : ApiController
     {
         private DBModel db = new DBModel();
-        Estados esta = new Estados();
-        //public IQueryable<Entity> GetEntities()
-        //{
-
-        //    return db.Entities;
-        //}
-
-
-
+        EntityService entity = new EntityService();
         // GET: api/Entities
-
         [HttpGet]
-        public List<EstadoVM> Index()
+        public List<Entity> Index()
         {
-            return esta.EstadoList();
+            return entity.EntityList();
         }
 
         // GET: api/Entities/5

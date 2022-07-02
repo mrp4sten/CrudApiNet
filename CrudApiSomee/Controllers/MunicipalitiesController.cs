@@ -1,33 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using CrudApiSomee.Models;
 using CrudApiSomee.Services;
-using CrudApiSomee.ViewModels;
 
 namespace CrudApiSomee.Controllers
 {
     public class MunicipalitiesController : ApiController
     {
         private DBModel db = new DBModel();
-        //public IQueryable<Municipality> GetMunicipalities()
-        //{
-        //    return db.Municipalities;
-        //}
 
         // GET: api/Municipalities
-        MunicipioService municipioService = new MunicipioService();
+        MunicipalityService municipalityService = new MunicipalityService();
         [HttpGet]
-        public List<MunicipiosVm> Index()
+        public List<Municipality> Index()
         {
-            return municipioService.EstadoList();
+            return municipalityService.EntityList();
         }
 
         // GET: api/Municipalities/5
